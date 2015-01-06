@@ -11,7 +11,12 @@
     [ImplementPropertyChanged]
     [Export(typeof(MasterViewModel))]
     public class MasterViewModel : Conductor<object>
-    {
+    { 
+        /// <summary>
+        /// Stores the events aggregator
+        /// </summary>
+        private readonly IEventAggregator events;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MasterViewModel"/> class
         /// </summary>
@@ -19,8 +24,10 @@
         public MasterViewModel(IEventAggregator events)
         {
             this.DisplayName = "CaliburnTemplate";
-            this.ActivateItem(new MainViewModel(events));
-            events.Subscribe(this);
+            this.events = events;
+
+            this.ActivateItem(new MainViewModel(this.events));
+            this.events.Subscribe(this);
         }
 
         /// <summary>

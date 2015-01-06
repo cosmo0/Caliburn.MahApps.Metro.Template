@@ -1,6 +1,7 @@
 ﻿namespace CaliburnTemplate
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.Composition;
     using System.ComponentModel.Composition.Hosting;
     using System.ComponentModel.Composition.Primitives;
@@ -25,6 +26,15 @@
         }
 
         /// <summary>
+        /// Builds up the container
+        /// </summary>
+        /// <param name="instance">The instance</param>
+        protected override void BuildUp(object instance)
+        {
+            this.container.SatisfyImportsOnce(instance);
+        }
+
+        /// <summary>
         /// Configures the bindings
         /// </summary>
         protected override void Configure()
@@ -41,6 +51,16 @@
         }
 
         /// <summary>
+        /// Gets all instances of the windows
+        /// </summary>
+        /// <param name="serviceType">The service type</param>
+        /// <returns>The list of windows</returns>
+        protected override IEnumerable<object> GetAllInstances(Type serviceType)
+        {
+            return this.container.GetExportedValues<object>(AttributedModelServices.GetContractName(serviceType));
+        }
+
+        /// <summary>
         /// Gets an instance of a window
         /// </summary>
         /// <param name="serviceType">The service type</param>
@@ -51,12 +71,12 @@
             string contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(serviceType) : key;
             var exports = this.container.GetExportedValues<object>(contract);
 
-            if (exports.Count() > 0)
+            if (exports.Any())
             {
                 return exports.First();
             }
 
-            return base.GetInstance(serviceType, key);
+            throw new Exception(string.Format("Could not locate any instances of contract {0}.", contract));
         }
 
         /// <summary>
