@@ -1,27 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace CaliburnTemplate.Windows
+﻿namespace CaliburnTemplate.Windows
 {
     /// <summary>
     /// Interaction logic for BaseWindow.xaml
     /// </summary>
-    public partial class BaseWindow : Window
+    public partial class BaseWindow 
     {
         public BaseWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -1,8 +1,13 @@
-﻿<Window x:Class="CaliburnTemplate.Windows.BaseWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="BaseWindow" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
-</Window>
+﻿<Controls:MetroWindow x:Class="CaliburnTemplate.Windows.BaseWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      Title="BaseWindow"
+                      Height="600"
+                      Width="800"
+                      WindowState="Maximized"
+                      WindowStartupLocation="CenterScreen"
+                      ResizeMode="CanResizeWithGrip"
+                      GlowBrush="{DynamicResource AccentColorBrush}">
+    <Grid />
+</Controls:MetroWindow>
