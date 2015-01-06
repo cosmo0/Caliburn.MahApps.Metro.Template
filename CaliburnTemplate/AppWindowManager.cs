@@ -4,6 +4,9 @@
     using Caliburn.Micro;
     using CaliburnTemplate.Windows;
 
+    /// <summary>
+    /// Provides a window manager for the application
+    /// </summary>
     public class AppWindowManager : WindowManager
     {
         /// <summary>

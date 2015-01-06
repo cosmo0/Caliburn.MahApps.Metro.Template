@@ -2,11 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Windows;
     using Caliburn.Micro;
     using CaliburnTemplate.ViewModels;
 
+    /// <summary>
+    /// Provides a bootstrapper for the application
+    /// </summary>
     public class AppBootstrapper : BootstrapperBase
     {
         /// <summary>
@@ -46,7 +48,7 @@
         /// <summary>
         /// Gets all instances of the windows
         /// </summary>
-        /// <param name="serviceType">The service type</param>
+        /// <param name="service">The service type</param>
         /// <returns>The list of windows</returns>
         protected override IEnumerable<object> GetAllInstances(Type service)
         {
@@ -56,7 +58,7 @@
         /// <summary>
         /// Gets an instance of a window
         /// </summary>
-        /// <param name="serviceType">The service type</param>
+        /// <param name="service">The service type</param>
         /// <param name="key">The key</param>
         /// <returns>The window instance</returns>
         protected override object GetInstance(Type service, string key)

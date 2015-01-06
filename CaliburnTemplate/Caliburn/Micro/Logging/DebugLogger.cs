@@ -4,22 +4,37 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// Implementation of the ILog and ILogExtended interfaces using
-    /// <see cref="Debug"/>.
+    /// Implementation of the ILog and ILogExtended interfaces using <see cref="Debug"/>.
     /// </summary>
     public class DebugLogger : ILog, ILogExtended
     {
+        /// <summary>
+        /// The error type label
+        /// </summary>
         private const string ErrorText = "ERROR";
 
+        /// <summary>
+        /// The info type label
+        /// </summary>
         private const string InfoText = "INFO";
 
+        /// <summary>
+        /// The warning type label
+        /// </summary>
         private const string WarnText = "WARN";
 
-        private readonly Type _type;
+        /// <summary>
+        /// The type of the logger
+        /// </summary>
+        private readonly Type type;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebugLogger"/> class
+        /// </summary>
+        /// <param name="type">The logger type</param>
         public DebugLogger(Type type)
         {
-            this._type = type;
+            this.type = type;
         }
 
         /// <summary>
@@ -70,6 +85,12 @@
             Debug.WriteLine(this.CreateLogMessage(format, args), WarnText);
         }
 
+        /// <summary>
+        /// Creates a log message
+        /// </summary>
+        /// <param name="format">The string format</param>
+        /// <param name="args">The string format arguments</param>
+        /// <returns>The formatted log message</returns>
         private string CreateLogMessage(string format, params object[] args)
         {
             return string.Format("[{0}] {1}", DateTime.Now.ToString("o"), string.Format(format, args));

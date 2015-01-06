@@ -9,7 +9,7 @@
     /// </summary>
     [ImplementPropertyChanged]
     public class MasterViewModel : Conductor<object>, IShell
-    { 
+    {
         /// <summary>
         /// Stores the events aggregator
         /// </summary>

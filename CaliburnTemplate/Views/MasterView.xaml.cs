@@ -7,6 +7,9 @@
     /// </summary>
     public partial class MasterView : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MasterView"/> class
+        /// </summary>
         public MasterView()
         {
             this.InitializeComponent();
