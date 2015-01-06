@@ -2,9 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.Composition;
-    using System.ComponentModel.Composition.Hosting;
-    using System.ComponentModel.Composition.Primitives;
     using System.Linq;
     using System.Windows;
     using Caliburn.Micro;
@@ -15,7 +12,7 @@
         /// <summary>
         /// Stores the composition containers
         /// </summary>
-        private CompositionContainer container;
+        private SimpleContainer container;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AppBootstrapper"/> class
@@ -31,7 +28,7 @@
         /// <param name="instance">The instance</param>
         protected override void BuildUp(object instance)
         {
-            this.container.SatisfyImportsOnce(instance);
+            this.container.BuildUp(instance);
         }
 
         /// <summary>
@@ -39,15 +36,11 @@
         /// </summary>
         protected override void Configure()
         {
-            this.container = new CompositionContainer(new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()));
+            this.container = new SimpleContainer();
 
-            CompositionBatch batch = new CompositionBatch();
-
-            batch.AddExportedValue<IWindowManager>(new AppWindowManager());
-            batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            batch.AddExportedValue(this.container);
-
-            this.container.Compose(batch);
+            this.container.Singleton<IWindowManager, WindowManager>();
+            this.container.Singleton<IEventAggregator, EventAggregator>();
+            this.container.PerRequest<IShell, MasterViewModel>();
         }
 
         /// <summary>
@@ -55,9 +48,9 @@
         /// </summary>
         /// <param name="serviceType">The service type</param>
         /// <returns>The list of windows</returns>
-        protected override IEnumerable<object> GetAllInstances(Type serviceType)
+        protected override IEnumerable<object> GetAllInstances(Type service)
         {
-            return this.container.GetExportedValues<object>(AttributedModelServices.GetContractName(serviceType));
+            return this.container.GetAllInstances(service);
         }
 
         /// <summary>
@@ -66,17 +59,15 @@
         /// <param name="serviceType">The service type</param>
         /// <param name="key">The key</param>
         /// <returns>The window instance</returns>
-        protected override object GetInstance(Type serviceType, string key)
+        protected override object GetInstance(Type service, string key)
         {
-            string contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(serviceType) : key;
-            var exports = this.container.GetExportedValues<object>(contract);
-
-            if (exports.Any())
+            var instance = this.container.GetInstance(service, key);
+            if (instance != null)
             {
-                return exports.First();
+                return instance;
             }
 
-            throw new Exception(string.Format("Could not locate any instances of contract {0}.", contract));
+            throw new Exception("Could not locate any instances.");
         }
 
         /// <summary>
@@ -86,7 +77,7 @@
         /// <param name="e">The startup events</param>
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            this.DisplayRootViewFor<MasterViewModel>();
+            this.DisplayRootViewFor<IShell>();
         }
     }
 }

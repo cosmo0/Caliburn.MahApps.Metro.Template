@@ -1,6 +1,5 @@
 ﻿namespace CaliburnTemplate.ViewModels
 {
-    using System.ComponentModel.Composition;
     using Caliburn.Micro;
     using PropertyChanged;
 
@@ -8,7 +7,6 @@
     /// Main view model for the application
     /// </summary>
     [ImplementPropertyChanged]
-    [Export(typeof(MainViewModel))]
     public class MainViewModel : PropertyChangedBase
     {
         /// <summary>
@@ -20,7 +18,6 @@
         /// Initializes a new instance of the <see cref="MainViewModel"/> class
         /// </summary>
         /// <param name="events">The events</param>
-        [ImportingConstructor]
         public MainViewModel(IEventAggregator events)
         {
             this.events = events;

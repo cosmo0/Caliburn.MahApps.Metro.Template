@@ -1,0 +1,6 @@
+﻿namespace CaliburnTemplate
+{
+    interface IShell
+    {
+    }
+}

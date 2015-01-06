@@ -1,6 +1,5 @@
 ﻿namespace CaliburnTemplate.ViewModels
 {
-    using System.ComponentModel.Composition;
     using Caliburn.Micro;
     using CaliburnTemplate.Events;
     using PropertyChanged;
@@ -9,8 +8,7 @@
     /// Handles screens management and wiring
     /// </summary>
     [ImplementPropertyChanged]
-    [Export(typeof(MasterViewModel))]
-    public class MasterViewModel : Conductor<object>
+    public class MasterViewModel : Conductor<object>, IShell
     { 
         /// <summary>
         /// Stores the events aggregator
