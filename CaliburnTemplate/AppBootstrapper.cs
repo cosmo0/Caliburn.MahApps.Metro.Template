@@ -38,7 +38,7 @@
         {
             this.container = new SimpleContainer();
 
-            this.container.Singleton<IWindowManager, WindowManager>();
+            this.container.Singleton<IWindowManager, AppWindowManager>();
             this.container.Singleton<IEventAggregator, EventAggregator>();
             this.container.PerRequest<IShell, MasterViewModel>();
         }
