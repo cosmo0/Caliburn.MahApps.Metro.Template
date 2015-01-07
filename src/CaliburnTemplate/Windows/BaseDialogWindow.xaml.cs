@@ -1,4 +1,4 @@
-﻿namespace CaliburnTemplate.Windows
+﻿namespace $safeprojectname$.Windows
 {
     /// <summary>
     /// Interaction logic for BaseDialogWindow.xaml

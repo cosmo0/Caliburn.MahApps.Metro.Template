@@ -2,12 +2,12 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-[assembly: AssemblyTitle("CaliburnTemplate")]
+[assembly: AssemblyTitle("$safeprojectname$")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Thomas Broust")]
-[assembly: AssemblyProduct("CaliburnTemplate")]
-[assembly: AssemblyCopyright("Copyright © Thomas Broust 2015")]
+[assembly: AssemblyCompany("$username$")]
+[assembly: AssemblyProduct("$safeprojectname$")]
+[assembly: AssemblyCopyright("Copyright © $username$ 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

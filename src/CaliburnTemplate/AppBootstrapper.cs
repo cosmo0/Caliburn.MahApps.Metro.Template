@@ -1,4 +1,4 @@
-﻿namespace CaliburnTemplate
+﻿namespace $safeprojectname$
 {
     using System;
     using System.Collections.Generic;

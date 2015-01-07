@@ -1,4 +1,4 @@
-﻿namespace CaliburnTemplate.Events
+﻿namespace $safeprojectname$.Events
 {
     using Caliburn.Micro;
 

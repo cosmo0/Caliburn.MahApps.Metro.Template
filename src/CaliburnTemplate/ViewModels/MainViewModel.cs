@@ -1,4 +1,4 @@
-﻿namespace CaliburnTemplate.ViewModels
+﻿namespace $safeprojectname$.ViewModels
 {
     using Caliburn.Micro;
     using PropertyChanged;

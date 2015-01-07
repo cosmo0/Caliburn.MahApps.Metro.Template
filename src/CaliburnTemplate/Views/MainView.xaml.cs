@@ -1,4 +1,4 @@
-﻿namespace CaliburnTemplate.Views
+﻿namespace $safeprojectname$.Views
 {
     using System.Windows.Controls;
 

@@ -1,8 +1,8 @@
-﻿namespace CaliburnTemplate
+﻿namespace $safeprojectname$
 {
     using System.Windows;
     using Caliburn.Micro;
-    using CaliburnTemplate.Windows;
+    using $safeprojectname$.Windows;
 
     /// <summary>
     /// Provides a window manager for the application
