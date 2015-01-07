@@ -16,3 +16,8 @@ Template project for [Caliburn.Micro](https://github.com/Caliburn-Micro/Caliburn
 * This bootstrapper then loads the `MainViewModel` through IoC and makes use of the `AppWindowManager`
 * The `AppWindowManager` makes use of the `BaseWindow` or the `BaseDialogWindow`, which are using MahApps.Metro
 * The `MasterViewModel` is a `Conductor`, which means it only "wires" the screens together. By default, it loads the `MainViewModel`.
+
+## Build the VISX extension
+
+* Make sure you have the Visual Studio SDK installed
+* Run `build.bat` to build the VISX package

@@ -1,0 +1,9 @@
+<projects>
+    <!-- Main projects -->
+    <solution>
+        <path>src\CaliburnTemplate.sln</path>
+    </solution>
+    <solution>
+        <path>src\CaliburnVisx.sln</path>
+    </solution>
+</projects>
