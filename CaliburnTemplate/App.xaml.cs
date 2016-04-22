@@ -12,7 +12,7 @@
         /// <summary>
         /// Initializes static members of the <see cref="App"/> class
         /// </summary>
-        public static App()
+        static App()
         {
             LogManager.GetLog = type => new NLogLogger(type);
         }
