@@ -16,3 +16,15 @@ Template project for [Caliburn.Micro](https://github.com/Caliburn-Micro/Caliburn
 * This bootstrapper then loads the `MainViewModel` through IoC and makes use of the `AppWindowManager`
 * The `AppWindowManager` makes use of the `BaseWindow` or the `BaseDialogWindow`, which are using MahApps.Metro
 * The `MasterViewModel` is a `Conductor`, which means it only "wires" the screens together. By default, it loads the `MainViewModel`.
+
+## How to use it
+
+Until I find out how to create a project template (or you help me do it), you'll have to set it up manually.
+
+* Copy the CaliburnTemplate folder into your project and rename it as you want
+* Rename the csproj file
+* Open all .cs files and do a global replace of `namespace CaliburnTemplate` with `namespace whatever` and `using CaliburnTemplate` with `using whatever`
+* Open all .xaml files and do a global replace of `x:Class="CaliburnTemplate` with `x:Class="whatever` and `clr-namespace:CaliburnTemplate` with `clr-namespace:whatever`
+* Open the csproj file and change the RootNamespace and AssemblyName nodes values
+* Open the AssemblyInfo.cs file and change the infos
+* Add the project to your solution
