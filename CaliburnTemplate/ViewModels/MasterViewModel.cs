@@ -8,7 +8,7 @@
     /// Handles screens management and wiring
     /// </summary>
     [ImplementPropertyChanged]
-    public class MasterViewModel : Conductor<object>, IShell
+    public class MasterViewModel : Conductor<object>, IShell, IHandle<ChangeMainScreenEvent>
     {
         /// <summary>
         /// Stores the events aggregator
