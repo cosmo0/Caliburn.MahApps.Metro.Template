@@ -1,0 +1,71 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>CaliburnTemplate</Name>
+    <Description>Template project for Caliburn.Micro WPF application using MahApps.Metro windows.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CaliburnTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="CaliburnTemplate.csproj" File="CaliburnTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AppBootstrapper.cs">AppBootstrapper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AppWindowManager.cs">AppWindowManager.cs</ProjectItem>
+      <Folder Name="Caliburn" TargetFolderName="Caliburn">
+        <Folder Name="Micro" TargetFolderName="Micro">
+          <Folder Name="Logging" TargetFolderName="Logging">
+            <ProjectItem ReplaceParameters="true" TargetFileName="DebugLogger.cs">DebugLogger.cs</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="Converters" TargetFolderName="Converters" />
+      <Folder Name="Events" TargetFolderName="Events">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ChangeMainScreenEvent.cs">ChangeMainScreenEvent.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FodyWeavers.xml">FodyWeavers.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IShell.cs">IShell.cs</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="NLog.config">NLog.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="NLog.xsd">NLog.xsd</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.cs">Resources.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Entypo-license.txt">Entypo-license.txt</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Entypo.ttf">Entypo.ttf</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Icons.xaml">Icons.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WindowsIcons-license.txt">WindowsIcons-license.txt</ProjectItem>
+      </Folder>
+      <Folder Name="ViewModels" TargetFolderName="ViewModels">
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MasterViewModel.cs">MasterViewModel.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml">MainView.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml.cs">MainView.xaml.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MasterView.xaml">MasterView.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MasterView.xaml.cs">MasterView.xaml.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Windows" TargetFolderName="Windows">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseDialogWindow.xaml">BaseDialogWindow.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseDialogWindow.xaml.cs">BaseDialogWindow.xaml.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseWindow.xaml">BaseWindow.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseWindow.xaml.cs">BaseWindow.xaml.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
