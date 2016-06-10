@@ -19,12 +19,14 @@ Template project for [Caliburn.Micro](https://github.com/Caliburn-Micro/Caliburn
 
 ## How to use it
 
-Until I find out how to create a project template (or you help me do it), you'll have to set it up manually.
+1. You can use the pre-packaged Visual Studio project template:
+  * Copy the file * *CaliburnTemplate.zip* * to your custom project template directory. Default path is \My Documents\Visual Studio Version\Templates\ProjectTemplates\Language\. Copy it into the Visual C# subfolder.
+  * Restart Visual Studio
+  * Create a new project and select the template CaliburnTemplate. It is located under Templates/Visual C# (if you copied it into that subdirectoy)
+  * Enable the NuGet package restore if needed by right-clicking on your project in Visual Studio and selecting the entry "Enable NuGet Package Restore".
+   
+2. Create a project template at your own:
+  * Open the CaliburnTemplate solution and make it can be built properly. 
+  * Export the project as a template by following the steps under file->export template. Choose "project template" and the project CaliburnTemplate, add a name/description/symbol to it and check the "import template into Visual Studio" option
 
-* Copy the CaliburnTemplate folder into your project and rename it as you want
-* Rename the csproj file
-* Open all .cs files and do a global replace of `namespace CaliburnTemplate` with `namespace whatever` and `using CaliburnTemplate` with `using whatever`
-* Open all .xaml files and do a global replace of `x:Class="CaliburnTemplate` with `x:Class="whatever` and `clr-namespace:CaliburnTemplate` with `clr-namespace:whatever`
-* Open the csproj file and change the RootNamespace and AssemblyName nodes values
-* Open the AssemblyInfo.cs file and change the infos
-* Add the project to your solution
+No more fiddling with namespaces needed.
