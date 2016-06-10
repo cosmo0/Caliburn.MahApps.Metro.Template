@@ -48,6 +48,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="Entypo-license.txt">Entypo-license.txt</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Entypo.ttf">Entypo.ttf</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Icons.xaml">Icons.xaml</ProjectItem>
+		<ProjectItem ReplaceParameters="true" TargetFileName="IconsNonShared.xaml">IconsNonShared.xaml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="WindowsIcons-license.txt">WindowsIcons-license.txt</ProjectItem>
       </Folder>
       <Folder Name="ViewModels" TargetFolderName="ViewModels">
