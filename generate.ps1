@@ -1,5 +1,7 @@
 Clear-Host
 
+# Huge props to @Lycidas0815 to help me understand how the Visual Studio Template files work !
+
 # Locations
 $here = split-path -parent $MyInvocation.MyCommand.Definition
 $source = [System.IO.Path]::GetFullPath(".\CaliburnTemplate")
