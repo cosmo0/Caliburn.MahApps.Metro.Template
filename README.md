@@ -19,14 +19,12 @@ Template project for [Caliburn.Micro](https://github.com/Caliburn-Micro/Caliburn
 
 ## How to use it
 
-1. You can use the pre-packaged Visual Studio project template:
-  * Copy the file * *CaliburnTemplate.zip* * to your custom project template directory. Default path is \My Documents\Visual Studio Version\Templates\ProjectTemplates\Language\. Copy it into the Visual C# subfolder.
-  * Restart Visual Studio
-  * Create a new project and select the template CaliburnTemplate. It is located under Templates/Visual C# (if you copied it into that subdirectoy)
-  * Enable the NuGet package restore if needed by right-clicking on your project in Visual Studio and selecting the entry "Enable NuGet Package Restore".
-   
-2. Create a project template at your own:
-  * Open the CaliburnTemplate solution and make it can be built properly. 
-  * Export the project as a template by following the steps under file->export template. Choose "project template" and the project CaliburnTemplate, add a name/description/symbol to it and check the "import template into Visual Studio" option
+1. Run the `generate.bat` file. It will generate the Visual Studio template using the latest sources.
+2. Restart Visual Studio.
 
-No more fiddling with namespaces needed.
+The template is now located in new project > Visual C#. You might need to enable Nuget package restore by right clicking on the solution file and selecting `Enable NuGet Package Restore`.
+
+Alternatively, you can use Visual Studio to generate the template :
+
+* Open the CaliburnTemplate solution and make it so it can be built properly.
+* Export the project as a template by following the steps under `File` > `Export template`. Choose "project template" and the project CaliburnTemplate, add a name/description/symbol to it and check the `Import template into Visual Studio` option.
